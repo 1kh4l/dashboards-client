@@ -1,0 +1,19 @@
+version: 1.0
+service_name: nepal
+
+stages:
+  -
+    name: hello_world
+    when:
+      cli: hello
+    image: node        # docker image
+    compute_size: small      # small, medium, large
+    commands:
+      - echo "hello world!"
+      - echo "environment variables that exist"
+      - env
+      - echo "cloning something"
+      - https://github.com/awslabs/serverless-application-model.git
+      - ls
+      - cd serverless-application-model
+      - ls
